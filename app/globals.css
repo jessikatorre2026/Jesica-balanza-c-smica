@@ -1,0 +1,63 @@
+@import "tailwindcss";
+
+:root {
+  --bg-deep: #0f172a;
+  --bg-panel: #1e293b;
+  --primary: #38bdf8;
+  --accent: #f472b6;
+  --text-main: #f1f5f9;
+  --text-muted: #94a3b8;
+  --border-color: #334155;
+  --glow: rgba(56, 189, 248, 0.25);
+  --user-msg-bg: #0369a1;
+  --bot-msg-bg: #334155;
+}
+
+body {
+  background-color: var(--bg-deep);
+  height: 100vh;
+  overflow: hidden;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+
+.pulse {
+  animation: pulse 4s infinite;
+}
+
+.glass-panel {
+  background: rgba(30, 41, 59, 0.7);
+  backdrop-filter: blur(8px);
+}
+
+.message-bot {
+  border-left: 4px solid var(--primary);
+}
+
+.message-user {
+  border-right: 4px solid var(--accent);
+}
+
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.8; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+
+.glitch-text {
+  text-shadow: 2px 0 var(--accent), -2px 0 var(--primary);
+}
+
+/* Custom scrollbar utility for webkit browsers */
+.scrollbar-thin::-webkit-scrollbar {
+  width: 6px;
+}
+.scrollbar-track-transparent::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-thumb-\[var\(--border-color\)\]::-webkit-scrollbar-thumb {
+  background: var(--border-color);
+  border-radius: 10px;
+}
